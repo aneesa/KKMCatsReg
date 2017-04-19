@@ -6,10 +6,11 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
     "semantic-ui-react": "^0.68.0"
   },
   "devDependencies": {
-    "electron": "^1.6.2",
+    "electron": "^1.6.5",
     "foreman": "^2.0.0",
     "react-scripts": "0.9.5"
   },

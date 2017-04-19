@@ -29,6 +29,8 @@ function createWindow () {
   });
   mainWindow.loadURL(startUrl);
 
+  mainWindow.setMenu(null);
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 

@@ -1,34 +1,41 @@
 import React, { Component } from 'react'
 import { Input, Menu, Segment } from 'semantic-ui-react'
-// import Home from './home'
-// import Cats from './cats'
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom'
+
+import Home from './home'
+import Cats from './cats'
 import Litters from './litters'
 
+const HOME_ROUTE = '/'
+const CATS_ROUTE = '/cats'
+const LITTERS_ROUTE = '/litters'
+
 class TopNav extends Component {
-  state = { activeItem: 'Home' }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
   render() {
-    const { activeItem } = this.state
-
     return (
-      <div>
-        <Menu pointing>
-          <Menu.Item name='Home' active={activeItem === 'Home'} onClick={this.handleItemClick} />
-          <Menu.Item name='Cats' active={activeItem === 'Cats'} onClick={this.handleItemClick} />
-          <Menu.Item name='Litters' active={activeItem === 'Litters'} onClick={this.handleItemClick} />
-          <Menu.Menu position='right'>
-            <Menu.Item>
-              <Input icon='search' placeholder='Search...' />
-            </Menu.Item>
-          </Menu.Menu>
-        </Menu>
+      <Router>
+        <div>
+          <Menu pointing>
+            {/* todo: figure out how to set the active classname correctly */}
+            <Menu.Item name='Home' as={NavLink} to={HOME_ROUTE} activeClassName='home' />
+            <Menu.Item name='Cats' as={NavLink} to={CATS_ROUTE} activeClassName='cats' />
+            <Menu.Item name='Litters' as={NavLink} to={LITTERS_ROUTE} activeClassName='litters' />
+            <Menu.Menu position='right'>
+              <Menu.Item>
+                <Input icon='search' placeholder='Search...' />
+              </Menu.Item>
+            </Menu.Menu>
+          </Menu>
 
-        <Segment>
-          <Litters />
-        </Segment>
-      </div>
+          <Segment>
+            <Switch>
+              <Route exact path={HOME_ROUTE} component={Home} />
+              <Route exact path={CATS_ROUTE} component={Cats} />
+              <Route exact path={LITTERS_ROUTE} component={Litters} />
+            </Switch>
+          </Segment>
+        </div>
+      </Router>
     );
   }
 }
