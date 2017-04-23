@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Table, Header, Rating } from 'semantic-ui-react'
 
-import ActionHeader from './action-header'
+import ActionHeader from './shared/action-header'
+import AddCat from './modal/add-cat'
 
 class Cats extends Component {
-
   render() {
     return (
       <div>
-        <ActionHeader headerTitle='CATS' />
+        <ActionHeader headerTitle='CATS' addModal={AddCat} />
         <Table celled padded>
           <Table.Header>
             <Table.Row>

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { Grid, Button, Header } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
 
 class ActionHeader extends Component {
   render() {
+    const AddModal = this.props.addModal;
     return (
       <Grid>
         <Grid.Column>
-          <Button icon='plus' circular color='blue' />
+          <AddModal />
         </Grid.Column>
         <Grid.Column verticalAlign='middle'>
           <Header as='h1'> {this.props.headerTitle} </Header>

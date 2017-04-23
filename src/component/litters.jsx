@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { Header, Table, Rating } from 'semantic-ui-react'
 
-import ActionHeader from './action-header'
+import ActionHeader from './shared/action-header'
+import AddLitter from './modal/add-litter'
 
 class Litters extends Component {
 
   render() {
     return (
       <div>
-        <ActionHeader headerTitle='LITTERS' />
+        <ActionHeader headerTitle='LITTERS' addModal={AddLitter} />
         <Table celled padded>
           <Table.Header>
             <Table.Row>

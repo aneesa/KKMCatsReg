@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopNav from './component/top-nav'
+import TopNav from './component/shared/top-nav'
 
 class App extends Component {
   render() {
