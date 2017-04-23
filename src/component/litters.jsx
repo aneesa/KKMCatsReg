@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Header, Table, Rating } from 'semantic-ui-react'
 
+import ActionHeader from './action-header'
+
 class Litters extends Component {
 
   render() {
     return (
       <div>
-        <Header as='h1'>LITTERS</Header>
+        <ActionHeader headerTitle='LITTERS' />
         <Table celled padded>
           <Table.Header>
             <Table.Row>
