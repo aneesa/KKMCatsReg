@@ -3,7 +3,7 @@ import { Grid, Header } from 'semantic-ui-react'
 
 class ActionHeader extends Component {
   render() {
-    const AddModal = this.props.addModal;
+    const AddModal = this.props.addModal
     return (
       <Grid>
         <Grid.Column>

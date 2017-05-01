@@ -5,8 +5,6 @@ import moment from 'moment'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-import AddPerson from './add-person'
-
 class AddLitter extends Component {
   constructor() {
     super();
