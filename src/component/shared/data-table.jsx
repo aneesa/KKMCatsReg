@@ -17,7 +17,7 @@ class DataTable extends Component {
           </Table.Row>
         </Table.Header>
 
-        <TableBody tRows={this.props.tRows} />
+        <TableBody />
       </Table>
     )
   }

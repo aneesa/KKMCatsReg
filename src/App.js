@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import { Input, Menu, Segment } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom'
-
-import ActionHeader from './component/shared/action-header'
-import DataTable from './component/shared/data-table'
+// import { withRouter } from 'react-router-dom'
+// import { connect } from 'react-redux'
 
 import Home from './component/home'
 import Cats from './component/cats'
 import Litters from './component/litters'
-
-import AddPerson from './component/modal/add-person'
-import PeopleTableBody from './component/people-table-body'
+import People from './component/people/people'
 
 const HOME_ROUTE = '/'
 const CATS_ROUTE = '/cats'
@@ -19,9 +16,6 @@ const PEOPLE_ROUTE = '/people'
 
 class App extends Component {
   render() {
-    const mockHeaders = ['Action', 'Name']
-    const mockData = [{ 'id' : 1, 'name' : 'John Doe'}, { 'id' : 2, 'name' : 'Jason Bourne'}]
-
     return (
       <Router>
         <div>
@@ -43,14 +37,7 @@ class App extends Component {
               <Route exact path={HOME_ROUTE} component={Home} />
               <Route exact path={CATS_ROUTE} component={Cats} />
               <Route exact path={LITTERS_ROUTE} component={Litters} />
-              <Route exact path={PEOPLE_ROUTE}
-                      render={ (props) =>
-                                  <div>
-                                    <ActionHeader headerTitle='PEOPLE' addModal={AddPerson} />
-                                    <DataTable tHeaders={mockHeaders} tBody={PeopleTableBody} tRows={mockData} />
-                                  </div>
-                            }
-              />
+              <Route exact path={PEOPLE_ROUTE} component={People} />
             </Switch>
           </Segment>
         </div>
@@ -58,5 +45,18 @@ class App extends Component {
     );
   }
 }
+
+// function mapStateToProps(state) {
+//     console.log("MAP STATE", state)
+//     return {
+//         people: state.people
+//     }
+// }
+// //
+// // // const mapStateToProps = state => ({
+// // //   people: state.people.people
+// // // })
+// //
+// export default withRouter(connect(mapStateToProps)(App))
 
 export default App

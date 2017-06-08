@@ -7,7 +7,7 @@ class ActionHeader extends Component {
     return (
       <Grid>
         <Grid.Column>
-          <AddModal />
+          <AddModal action='Add' modalOpen={true} />
         </Grid.Column>
         <Grid.Column verticalAlign='middle'>
           <Header as='h1'> {this.props.headerTitle} </Header>
